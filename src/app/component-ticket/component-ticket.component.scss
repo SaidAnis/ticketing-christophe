@@ -1,0 +1,27 @@
+.rouge {
+  color: #EB3C4E;
+}
+
+.bleu {
+  color: #48B7E1;
+}
+
+.vert {
+  color: limegreen;
+}
+
+.ticket-titre {
+  border: 2px solid white;
+  box-shadow: 2px 2px 2px rgba(0,0,0,0.2);
+  padding: 2%;
+  border-radius: 15px;
+  font-size: larger;
+}
+
+.status {
+  float: right;
+}
+
+.suppression-ticket {
+  float: right;
+}
