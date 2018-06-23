@@ -1,11 +1,14 @@
-import {Component} from '@angular/core';
+import {Component, OnInit} from '@angular/core';
+import {Entreprise} from './models/entreprise';
+import {EntrepriseService} from './services/entreprise.service';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss']
 })
-export class AppComponent {
+export class AppComponent implements OnInit {
+  entreprise: Entreprise;
   prenom = 'Christophe';
   tabTicket = [
     {
@@ -44,6 +47,14 @@ export class AppComponent {
       message: 'Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Morbi fermentum tincidunt enim vel auctor. Phasellus enim felis, cursus non rhoncus sed, vulputate ut erat. Mauris mollis diam a gravida suscipit. Aliquam felis dolor, pharetra aliquet feugiat sed, vestibulum venenatis arcu. Vivamus ultrices sollicitudin enim, dapibus dignissim justo fringilla eu. Quisque nec nunc pharetra, mollis neque ut, posuere lacus. '
     }
   ];
+
+  constructor(private entrepriseService: EntrepriseService) {
+
+  }
+
+  ngOnInit() {
+    this.entreprise = this.entrepriseService.entreprise;
+  }
 
   onNouveau() {
     console.log(this.tabTicket);
