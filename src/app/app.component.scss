@@ -6,7 +6,7 @@
 
 .noir {
   background-color: black;
-  height: 50px;
+  height: 60px;
 }
 
 .nomApp {
@@ -46,5 +46,21 @@ ul {
 
 button {
   padding: 1%;
-  margin: 1%;
+  margin: 3%;
+}
+
+fieldset {
+  background-color: #48B7E1;
+  padding: 2%;
+  margin: 2%;
+  box-shadow: 5px 5px 5px rgba(0,0,0,0.3);
+}
+
+textarea {
+  height: 150px;
+  width: 100%;
+}
+
+input, select {
+  width: 100%;
 }
