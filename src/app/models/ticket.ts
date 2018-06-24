@@ -1,6 +1,5 @@
 export class Ticket {
-  tabTicket: any = [];
-  constructor(public id: number, public date: string, public status: string, message: string) {
-    this.tabTicket = [];
+  constructor(
+    public id: number, public categorie: string, public status: string, public objet: string, public message: string) {
   }
 }

@@ -1,4 +1,6 @@
 import {Component, OnInit, Input} from '@angular/core';
+import {EntrepriseService} from '../services/entreprise.service';
+import {Entreprise} from '../models/entreprise';
 
 @Component({
   selector: 'app-component-ticket',
@@ -6,15 +8,16 @@ import {Component, OnInit, Input} from '@angular/core';
   styleUrls: ['./component-ticket.component.scss']
 })
 export class ComponentTicketComponent implements OnInit {
-  @Input() tabTicket: any = [];
+  @Input() tabTicket = [];
+  valueDate = new Date();
 
-  constructor() {
+  constructor(private entrepriseService: EntrepriseService) {
   }
 
   ngOnInit() {
   }
 
-  onSupprimerTicket() {
-    console.log(this.tabTicket);
+  onSupprimerTicket(id: number) {
+    this.entrepriseService.supprimerTicket(id);
   }
 }

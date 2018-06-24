@@ -1,15 +1,17 @@
-<div class="jumbotron" *ngFor="let c of tabTicket">
-  <h3 class="ticket-titre"><span><i class="fa fa-ticket"></i></span> {{c.titre}}</h3>
+<div class="jumbotron" *ngFor="let t of tabTicket">
+  <h3 class="ticket-titre"><span><i class="fa fa-ticket"></i></span> {{t.objet}}</h3>
+  <p>#{{t.id}} - {{t.categorie}}</p>
   <p class="status">
     <i class="fa fa-circle" [ngClass]="{
-    'rouge': c.status === 'En cours',
-    'bleu': c.status === 'Terminé non validé',
-    'vert': c.status  === 'Terminé validé' }">
+    'rouge': t.status === 'En cours',
+    'bleu': t.status === 'Terminé non validé',
+    'vert': t.status  === 'Terminé validé' }">
     </i>
-    {{c.status}}
+    {{t.status}}
   </p>
-  <p>Publié le : {{c.datePub}}</p>
-  <p>{{c.message}}</p>
-  <button class="btn btn-sm btn-outline-danger suppression-ticket" (click)="onSupprimerTicket()"><i class="fa fa-times-circle"> Supprimer
+  <p>Publié le : {{valueDate | date: 'dd/MM/yyyy'}}</p>
+  <p>{{t.message}}</p>
+  <button class="btn btn-sm btn-outline-danger suppression-ticket" (click)="onSupprimerTicket(t.id)"><i
+    class="fa fa-times-circle"> Supprimer
     Ticket</i></button>
 </div>
