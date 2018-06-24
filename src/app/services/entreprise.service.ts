@@ -11,7 +11,7 @@ export class EntrepriseService {
 
   ajouterTicket(t: Ticket) {
     console.log(this.entreprise.tabTicket);
-    this.entreprise.tabTicket.push(t);
+    this.entreprise.tabTicket.unshift(t);
   }
 
   supprimerTicket(id: number) {
