@@ -1,0 +1,42 @@
+<h1><i class="fa fa-user"> Bienvenue {{prenom}}</i></h1>
+<ul class="nav flex-column jumbotron">
+  <h2>Menu</h2>
+  <li class="nav-item">
+    <a class="nav-link active" href="#">Accueil</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="#">Mon Compte</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="#">Mes tickets</a>
+  </li>
+  <li>
+    <button class="btn btn-dark" (click)="onNouveau()"><i class="fa fa-plus-square">
+      Nouveau ticket</i>
+    </button>
+  </li>
+</ul>
+<div>
+  <form class="form-group" #a="ngForm"
+        (ngSubmit)="onAjouterTicket(a)">
+    <fieldset>
+      <label>Objet</label>
+      <br>
+      <input type="text" name="objet" ngModel>
+      <br>
+      <label>Catégorie</label>
+      <br>
+      <select name="categorie" ngModel>
+        <option value="Demande" >Demande</option>
+        <option value="Urgence">Urgence</option>
+        <option value="Information">Information</option>
+      </select>
+      <br>
+      <label>Contenu du ticket</label>
+      <br>
+      <textarea type="text" name="message" ngModel></textarea>
+      <br>
+      <button class="btn btn-dark" type="submit">Publier</button>
+    </fieldset>
+  </form>
+</div>

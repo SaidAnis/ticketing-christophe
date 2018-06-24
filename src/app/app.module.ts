@@ -5,11 +5,15 @@ import {AppComponent} from './app.component';
 import {ComponentTicketComponent} from './component-ticket/component-ticket.component';
 import {EntrepriseService} from './services/entreprise.service';
 import {Ticket} from './models/ticket';
+import { MenuComponent } from './menu/menu.component';
+import { ConnexionComponent } from './connexion/connexion.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    ComponentTicketComponent
+    ComponentTicketComponent,
+    MenuComponent,
+    ConnexionComponent
   ],
   imports: [
     BrowserModule,

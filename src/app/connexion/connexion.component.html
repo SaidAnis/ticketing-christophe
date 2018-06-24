@@ -1,0 +1,20 @@
+<div class="jumbotron connexion">
+  <h1>Bienvenue sur I'M In E-ticket<br>Connectez vous</h1>
+  <form #a="ngForm"
+        (ngSubmit)="onConnexion(a)">
+    <fieldset>
+      <label>Adresse mail IMIE</label>
+      <br>
+      <input type="email" name="mail" ngModel>
+      <br>
+      <label>Mot de passe</label>
+      <br>
+      <input type="password" name="password" ngModel>
+      <br>
+      <br>
+      <button class="btn btn-outline-dark" type="submit">Connexion</button>
+    </fieldset>
+  </form>
+  <br>
+  <p><b>{{erreur}}</b></p>
+</div>

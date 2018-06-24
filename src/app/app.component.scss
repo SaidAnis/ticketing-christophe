@@ -6,7 +6,6 @@
 
 .noir {
   background-color: black;
-  height: 60px;
 }
 
 .nomApp {
@@ -20,47 +19,5 @@
   padding: 1%;
 }
 
-a {
-  text-decoration: none;
-  color: black;
-}
 
-h1 {
-  font-size: larger;
-  background-color: #48B7E1;
-  border-radius: 10px;
-  padding: 3%;
-  box-shadow: 5px 5px 5px rgba(0,0,0,0.2);
-  margin: 5%;
-  color: white;
-}
 
-.search {
-  padding: 1% 1%;
-  background-color: black;
-}
-
-ul {
-  padding: 5%;
-}
-
-button {
-  padding: 1%;
-  margin: 3%;
-}
-
-fieldset {
-  background-color: #48B7E1;
-  padding: 2%;
-  margin: 2%;
-  box-shadow: 5px 5px 5px rgba(0,0,0,0.3);
-}
-
-textarea {
-  height: 150px;
-  width: 100%;
-}
-
-input, select {
-  width: 100%;
-}

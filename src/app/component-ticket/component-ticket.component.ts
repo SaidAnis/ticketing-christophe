@@ -10,14 +10,20 @@ import {Entreprise} from '../models/entreprise';
 export class ComponentTicketComponent implements OnInit {
   @Input() tabTicket = [];
   valueDate = new Date();
+  entreprise: Entreprise;
 
   constructor(private entrepriseService: EntrepriseService) {
   }
 
   ngOnInit() {
+    this.entreprise = this.entrepriseService.entreprise;
   }
 
   onSupprimerTicket(id: number) {
     this.entrepriseService.supprimerTicket(id);
+  }
+
+  onDeconnexion() {
+    this.entreprise.authentification = false;
   }
 }
