@@ -10,25 +10,14 @@ import {Ticket} from './models/ticket';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent implements OnInit {
-  entreprise: Entreprise;
-  prenom = 'Christophe';
-  ticketId = 0;
+  entreprise:  Entreprise;
+  authentification = false;
 
   constructor(private entrepriseService: EntrepriseService) {
   }
 
   ngOnInit() {
     this.entreprise = this.entrepriseService.entreprise;
-  }
-
-  onNouveau() {
-    this.entrepriseService.nouveauTicket();
-  }
-
-  onAjouterTicket(a: NgForm) {
-    this.ticketId++;
-    const t = new Ticket(this.ticketId, a.value['categorie'], 'En cours', a.value['objet'], a.value['message']);
-    this.entrepriseService.ajouterTicket(t);
   }
 
 }

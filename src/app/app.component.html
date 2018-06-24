@@ -4,15 +4,10 @@
       <p class="nomApp">I'M In E-ticket</p>
     </div>
     <div class="col-md-6 noir">
-      <div class="search">
-        <form class="form-inline my-2 my-lg-0">
-          <input class="form-control mr-sm-2" type="search" placeholder="Rechercher un ticket" aria-label="Search">
-          <button class="btn btn-outline-light my-2 my-sm-0" type="submit">Rechercher</button>
-        </form>
-      </div>
+
     </div>
     <div class="col-md-3 noir">
-      <button class="btn btn-outline-light">Déconnexion</button>
+
     </div>
   </div>
 </div>
@@ -21,51 +16,12 @@
     <div class="col-md-12">
       <div class="row">
         <div class="col-md-3 rouge">
-          <h1><i class="fa fa-user"> Bienvenue {{prenom}}</i></h1>
-          <ul class="nav flex-column jumbotron">
-            <h2>Menu</h2>
-            <li class="nav-item">
-              <a class="nav-link active" href="#">Accueil</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">Mon Compte</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">Mes tickets</a>
-            </li>
-            <li>
-              <button class="btn btn-dark" (click)="onNouveau()"><i class="fa fa-plus-square">
-                Nouveau ticket</i>
-              </button>
-            </li>
-          </ul>
-          <div>
-            <form class="form-group" #a="ngForm"
-                  (ngSubmit)="onAjouterTicket(a)">
-              <fieldset>
-                <label>Objet</label>
-                <br>
-                <input type="text" name="objet" ngModel>
-                <br>
-                <label>Catégorie</label>
-                <br>
-                <select name="categorie" ngModel>
-                  <option value="Demande" >Demande</option>
-                  <option value="Urgence">Urgence</option>
-                  <option value="Information">Information</option>
-                </select>
-                <br>
-                <label>Contenu du ticket</label>
-                <br>
-                <textarea type="text" name="message" ngModel></textarea>
-                <br>
-                <button class="btn btn-dark" type="submit">Publier</button>
-              </fieldset>
-            </form>
-          </div>
+          <app-menu *ngIf="this.entreprise.authentification == true" [tabTicket]="this.entreprise.tabTicket"></app-menu>
         </div>
         <div class="col-md-6">
-          <app-component-ticket [tabTicket]="this.entreprise.tabTicket"></app-component-ticket>
+          <app-connexion *ngIf="this.entreprise.authentification == false" [authentification]="this.entreprise.authentification"></app-connexion>
+          <app-component-ticket *ngIf="this.entreprise.authentification == true"
+                                [tabTicket]="this.entreprise.tabTicket"></app-component-ticket>
         </div>
         <div class="col-md-3 rouge">
           <img class="img-fluid" alt="IMIE logo"
