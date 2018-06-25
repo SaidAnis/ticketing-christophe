@@ -12,7 +12,6 @@ import {Ticket} from '../models/ticket';
 export class NouveauTicketComponent implements OnInit {
   @Input() tabTicket: any;
   entreprise: Entreprise;
-  ticketId = 0;
 
   constructor(private entrepriseService: EntrepriseService) {
   }
@@ -22,8 +21,8 @@ export class NouveauTicketComponent implements OnInit {
   }
 
   onAjouterTicket(a: NgForm) {
-    this.ticketId++;
-    let t = new Ticket(this.ticketId, a.value['categorie'], 'En cours', a.value['objet'], a.value['message']);
+    this.entreprise.ticketId++;
+    let t = new Ticket(this.entreprise.ticketId, a.value['categorie'], 'En cours', a.value['objet'], a.value['message']);
     this.entrepriseService.ajouterTicket(t);
   }
 
