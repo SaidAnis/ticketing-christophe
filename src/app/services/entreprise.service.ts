@@ -4,14 +4,13 @@ import {Ticket} from '../models/ticket';
 export class EntrepriseService {
   entreprise = new Entreprise();
 
-
   nouveauTicket() {
-    console.log('Nouveau Ticket');
+    this.entreprise.newTicket = true;
   }
 
   ajouterTicket(t: Ticket) {
-    console.log(this.entreprise.tabTicket);
     this.entreprise.tabTicket.unshift(t);
+    this.entreprise.newTicket = false;
   }
 
   supprimerTicket(id: number) {
@@ -20,5 +19,9 @@ export class EntrepriseService {
         this.entreprise.tabTicket.splice(parseInt(i), 1);
       }
     }
+  }
+
+  annulerTicket() {
+    this.entreprise.newTicket = false;
   }
 }
