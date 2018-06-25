@@ -4,10 +4,8 @@
       <p class="nomApp">I'M In E-ticket</p>
     </div>
     <div class="col-md-6 noir">
-
     </div>
     <div class="col-md-3 noir">
-
     </div>
   </div>
 </div>
@@ -19,9 +17,14 @@
           <app-menu *ngIf="this.entreprise.authentification == true" [tabTicket]="this.entreprise.tabTicket"></app-menu>
         </div>
         <div class="col-md-6">
-          <app-connexion *ngIf="this.entreprise.authentification == false" [authentification]="this.entreprise.authentification"></app-connexion>
+
+          <app-connexion *ngIf="this.entreprise.authentification == false"
+                         [authentification]="this.entreprise.authentification"></app-connexion>
+          <app-nouveau-ticket *ngIf="this.entreprise.newTicket == true"
+                              [tabTicket]="this.entreprise.tabTicket"></app-nouveau-ticket>
           <app-component-ticket *ngIf="this.entreprise.authentification == true"
                                 [tabTicket]="this.entreprise.tabTicket"></app-component-ticket>
+
         </div>
         <div class="col-md-3 rouge">
           <img class="img-fluid" alt="IMIE logo"

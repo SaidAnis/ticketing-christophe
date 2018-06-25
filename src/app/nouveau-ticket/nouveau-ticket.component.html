@@ -1,0 +1,26 @@
+<div>
+  <form class="form-group" #a="ngForm"
+        (ngSubmit)="onAjouterTicket(a)">
+    <fieldset>
+      <label>Objet</label>
+      <br>
+      <input type="text" name="objet" ngModel>
+      <br>
+      <label>Catégorie</label>
+      <br>
+      <select name="categorie" ngModel>
+        <option value="Demande">Demande</option>
+        <option value="Urgence">Urgence</option>
+        <option value="Information">Information</option>
+      </select>
+      <br>
+      <label>Contenu du ticket</label>
+      <br>
+      <textarea type="text" name="message" ngModel></textarea>
+      <br>
+      <button class="btn btn-dark" (click)="onAnnulerTicket()"><i class="fa fa-times-circle"> Annuler</i></button>
+      <button class="btn btn-dark" type="submit"><i class="fa fa-share-square"> Publier</i></button>
+    </fieldset>
+  </form>
+
+</div>

@@ -1,7 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {Entreprise} from './models/entreprise';
 import {EntrepriseService} from './services/entreprise.service';
-import {NgForm} from '@angular/forms';
 import {Ticket} from './models/ticket';
 
 @Component({
@@ -10,6 +9,7 @@ import {Ticket} from './models/ticket';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent implements OnInit {
+  ticket: Ticket;
   entreprise:  Entreprise;
   authentification = false;
 

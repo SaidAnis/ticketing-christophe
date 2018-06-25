@@ -7,13 +7,15 @@ import {EntrepriseService} from './services/entreprise.service';
 import {Ticket} from './models/ticket';
 import { MenuComponent } from './menu/menu.component';
 import { ConnexionComponent } from './connexion/connexion.component';
+import { NouveauTicketComponent } from './nouveau-ticket/nouveau-ticket.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     ComponentTicketComponent,
     MenuComponent,
-    ConnexionComponent
+    ConnexionComponent,
+    NouveauTicketComponent
   ],
   imports: [
     BrowserModule,
